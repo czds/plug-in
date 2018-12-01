@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试页面</title>
+    <link rel="stylesheet" href="./Plug-cc.css">
+    <style>
+        *{
+            margin: 10px 15px;
+        }
+        .result{
+            vertical-align: middle;
+        }
+        .circle{
+            padding: 30px;
+            border-radius: 50%;
+            background-color: #eee;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" id="color">
+        <div style="color: red">
+            红色:
+            <input type="range" name="red" min='0' max='255' value="30">
+        </div>
+        <div>
+            第一个颜色配比
+            <span class="red"></span>
+        </div>
+
+        <div style="color: green">
+            绿色:
+            <input type="range" name="green" min='0' max='255' value="80">
+        </div>
+        <div>
+            第二个颜色配比
+            <span class="green"></span>
+        </div>
+
+        <div style="color: blue">
+            蓝色:
+            <input type="range" name="blue" min='0' max='255' value="30">
+        </div>
+        <div>
+            第三个颜色配比
+            <span class="blue"></span>
+        </div>
+    </form>
+
+    <div class="result">结果：
+        <span class="circle">&nbsp;</span>
+    </div>
+
+    <div name="result"></div>
+
+    <script src="./Plug-cc.js"></script>
+    <script>
+
+        let select = document.querySelector.bind(document);
+
+        setInterval(() => {
+            //显示选到的值
+            select('.red').innerHTML = select('[name=red]').value;
+            select('.green').innerHTML = select('[name=green]').value;
+            select('.blue').innerHTML = select('[name=blue]').value;
+
+            //根据3个输入的值改变⚪的颜色
+            select('.circle').style.backgroundColor = `
+            rgb(${select('[name=red]').value},${select('[name=green]').value},
+            ${select('[name=blue]').value})  `;
+
+            //输出测试读取结果
+            let data = formData.get(select('#color'));
+
+            select('[name=result]').innerHTML = '';
+
+            for (let key in data) {
+                select('[name=result]').innerHTML += `
+                    ${key}: ${data[key]}
+                    <div class="br"></div>  `;
+            };
+        }, 100);
+
+    </script>
+</body>
+
+</html>
