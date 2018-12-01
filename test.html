@@ -11,9 +11,16 @@
         *{
             margin: 10px 15px;
         }
+
+        .container {
+            max-width: 600px;
+            margin: 5px auto;
+        }
+
         .result{
             vertical-align: middle;
         }
+        
         .circle{
             padding: 30px;
             border-radius: 50%;
@@ -24,40 +31,42 @@
 </head>
 
 <body>
-    <form action="" id="color">
-        <div style="color: red">
-            红色:
-            <input type="range" name="red" min='0' max='255' value="30">
-        </div>
-        <div>
-            第一个颜色配比
-            <span class="red"></span>
+    <div class="container">
+        <form action="" id="color">
+            <div style="color: red">
+                红色:
+                <input type="range" name="red" min='0' max='255' value="30">
+            </div>
+            <div>
+                第一个颜色配比
+                <span class="red"></span>
+            </div>
+
+            <div style="color: green">
+                绿色:
+                <input type="range" name="green" min='0' max='255' value="80">
+            </div>
+            <div>
+                第二个颜色配比
+                <span class="green"></span>
+            </div>
+
+            <div style="color: blue">
+                蓝色:
+                <input type="range" name="blue" min='0' max='255' value="30">
+            </div>
+            <div>
+                第三个颜色配比
+                <span class="blue"></span>
+            </div>
+        </form>
+
+        <div class="result">结果：
+            <span class="circle">&nbsp;</span>
         </div>
 
-        <div style="color: green">
-            绿色:
-            <input type="range" name="green" min='0' max='255' value="80">
-        </div>
-        <div>
-            第二个颜色配比
-            <span class="green"></span>
-        </div>
-
-        <div style="color: blue">
-            蓝色:
-            <input type="range" name="blue" min='0' max='255' value="30">
-        </div>
-        <div>
-            第三个颜色配比
-            <span class="blue"></span>
-        </div>
-    </form>
-
-    <div class="result">结果：
-        <span class="circle">&nbsp;</span>
+        <div name="result"></div>
     </div>
-
-    <div name="result"></div>
 
     <script src="./Plug-cc.js"></script>
     <script>
