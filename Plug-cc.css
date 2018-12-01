@@ -1,0 +1,35 @@
+.popout {
+    padding: 10px;
+    display: inline-block;
+    position: fixed;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+    border: 2px solid;
+    background: #fff;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* 遮罩层样式 */
+.plug-mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #777;
+    z-index: 999;
+}
+
+/* 弹出窗口样式 */
+.plug-popup {
+    position: fixed;
+    z-index: 1000;
+    background-color: #fff;
+    padding: 10px;
+    border: 4px solid #000;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    text-align: center;
+}

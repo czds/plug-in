@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>插件使用说明</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.4;
+            font-size: 15px;
+            color: #333;
+            background: #eee;
+            padding: 10px 0 20px 0;
+        }
+
+        hr {
+            opacity: 0.3;
+            margin-top: 30px;
+        }
+
+        .text {
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        .br {
+            padding: 5px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 5px auto;
+        }
+
+        h3 {
+            margin-left: 70px;
+            font-size: 23px;
+            font-weight: normal;
+        }
+
+        h4 {
+            margin-left: 20px;
+        }
+
+        p {
+            margin-left: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h4>使用插件先在页面中引入Plug-cc.js和Plug-cc.css这2个文件</h4>
+
+        <h3>内容1：表单的存值与取值</h3>
+
+        <div class="text">
+
+            <p>存值:调用formData.set（data,formSelector）方法</p>
+            <p>其中 formSelector 为选好的表单元素</p>
+            <p>data 数据格式为{name:value} </p>
+            <p> name为要填入的输入元素的name的值</p>
+            <p> value为对应元素想要填入的内容</p>
+
+            <div class="br"></div>
+
+            <p>取值:调用formData.get（formSelector）方法</p>
+            <p>其中 formSelector 为选好的表单元素</p>
+            <p>方法返回的数据格式为{name:value}</p>
+            <p> 其中，name为要输入元素的name的值</p>
+            <p> value为对应元素的值</p>
+
+        </div>
+
+        <hr>
+
+        <h3>内容2：弹出消息或提示</h3>
+
+        <div class="text">
+
+            <p>第一种：调用addPopup.global（）方法</p>
+            <p>需要弹出提示的元素加上data-popout属性，其值为弹出的内容</p>
+            <p> 元素的data-position属性可以设置弹出的位置，参数可以为：</p>
+            <p>top:向上移动一个弹出框（高度）的距离</p>
+            <p>bottom:向下移动一个弹出框（高度）的距离</p>
+            <p>left:向左移动一个弹出框（高度）的距离</p>
+            <p>right:向右移动一个弹出框（高度）的距离</p>
+
+            <div class="br"></div>
+
+            <p>第二种：调用addPopup.part（triggerSelector, popupSelector,location）方法</p>
+            <p>其中triggerSelector为点击触发弹出消息的元素</p>
+            <p>popupSelector为选好的要弹出的元素</p>
+            <p>location数据内容为{position：，xOffset：，yOffset: &nbsp;}</p>
+            <p> xOffset,yOffset分别为弹出消息的X轴与Y周偏移量</p>
+            <p>往上移yOffset加负值，往左移xOffset同理</p>
+            <p> position默认居中center，可选：mid-top（中上）、mid-bottom（中下）</p>
+            <p> left-top（左上）、left-mid（左中）、left-bottom（左下）</p>
+            <p> right-top（右上）、right-mid（右中）、right-bottom（右下）</p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
